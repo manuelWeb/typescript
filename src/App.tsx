@@ -1,15 +1,16 @@
 import React from 'react';
 import Person, { IHumain } from './Person';
+import Famille from './Famille'
 import './App.css';
 
 const App: React.FC = () => {
+
   const bob: IHumain = {
     nom: 'Bob',
     age: 3,
     unEnfant: undefined,
     desEnfants: []
   };
-
   const Elisa: IHumain = {
     nom: 'Elisa',
     age: 6,
@@ -34,6 +35,9 @@ const App: React.FC = () => {
     <div className="App">
       <Person person={manu} />
       <Person person={manu.unEnfant as IHumain} />
+      <br />
+      <br />
+      <Famille />
     </div>
   );
 }
