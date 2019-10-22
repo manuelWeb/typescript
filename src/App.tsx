@@ -1,24 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import Person, { IHumain } from './Person';
 import './App.css';
 
 const App: React.FC = () => {
+  const bob: IHumain = {
+    nom: 'Bob',
+    age: 3,
+    unEnfant: undefined,
+    desEnfants: []
+  };
+
+  const Elisa: IHumain = {
+    nom: 'Elisa',
+    age: 6,
+    unEnfant: undefined,
+    desEnfants: []
+  }
+  const Lucie: IHumain = {
+    nom: 'Lucie',
+    age: 9,
+    unEnfant: undefined,
+    desEnfants: []
+  }
+
+  const manu: IHumain = {
+    nom: 'Manu',
+    age: 44,
+    unEnfant: bob,
+    desEnfants: [Elisa, Lucie]
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person person={manu} />
+      <Person person={manu.unEnfant as IHumain} />
     </div>
   );
 }
