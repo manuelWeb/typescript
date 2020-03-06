@@ -2,6 +2,8 @@ import React from 'react';
 import Person, { IHumain } from './Person';
 import Famille from './Famille'
 import './App.css';
+import EvntDivInputPropagation from './EvntDivInputPropagation'
+import Ref from './Ref'
 
 const App: React.FC = () => {
 
@@ -38,6 +40,10 @@ const App: React.FC = () => {
       <br />
       <br />
       <Famille />
+      {'-'.repeat(80)}
+      <EvntDivInputPropagation />
+      {'-'.repeat(80)}
+      <Ref />
     </div>
   );
 }
